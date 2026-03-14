@@ -1,3 +1,7 @@
+[![Go Doc][godoc-image]][godoc-url]
+[![Build Status][workflow-image]][workflow-url]
+[![Test Coverage][codecov-image]][codecov-url]
+
 # craft
 
 Craft is a lightweight toolkit for building minimal, elegant command-line applications in Go.
@@ -29,3 +33,11 @@ func main() {
   u.Infof(ui.FgTrueColor(0x006D77), "Hello, %s <%s>!", inputs.Name, inputs.Email)
 }
 ```
+
+
+[godoc-url]: https://pkg.go.dev/github.com/neatplatform/craft
+[godoc-image]: https://pkg.go.dev/badge/github.com/neatplatform/craft
+[workflow-url]: https://github.com/neatplatform/craft/actions/workflows/go.yml
+[workflow-image]: https://github.com/neatplatform/craft/actions/workflows/go.yml/badge.svg
+[codecov-url]: https://codecov.io/github/neatplatform/craft
+[codecov-image]: https://codecov.io/github/neatplatform/craft/badge.svg
