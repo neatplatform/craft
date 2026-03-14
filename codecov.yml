@@ -5,7 +5,7 @@
 ##
 
 codecov:
-  require_ci_to_pass: no  # Do not wait for other CI statuses to pass.
+  require_ci_to_pass: false  # Do not wait for other CI statuses to pass.
 
 # https://docs.codecov.com/docs/coverage-configuration
 coverage:
@@ -25,7 +25,7 @@ coverage:
       default:
         target: 95%  # A minimum coverage ratio that must be met.
 
-    # Coverage shifts outside the PR/commit diff, reported as a commit status.
+    # Coverage drops outside the PR/commit diff, reported as a commit status.
     changes: yes
 
 # https://docs.codecov.com/docs/pull-request-comments
