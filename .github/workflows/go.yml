@@ -6,6 +6,9 @@ on:
   merge_group:
     branches:
       - main  # Merge queue validation
+  push:
+    branches:
+      - main  # Post-merge validation
 
 jobs:
   package:
