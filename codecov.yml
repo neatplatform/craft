@@ -18,15 +18,17 @@ coverage:
     # Total coverage across the project, measured against the PR base or parent commit.
     project:
       default:
-        target: 90%  # A minimum coverage ratio that must be met.
+        target: 90%    # A minimum coverage ratio that must be met.
+        threshold: 0%  # Allow coverage to drop by % and still post a success status.
   
     # Coverage of lines changed in the PR or commit.
     patch:
       default:
-        target: 95%  # A minimum coverage ratio that must be met.
+        target: 95%    # A minimum coverage ratio that must be met.
+        threshold: 0%  # Allow coverage to drop by % and still post a success status.
 
     # Coverage drops outside the PR/commit diff, reported as a commit status.
-    changes: yes
+    changes: true
 
 # https://docs.codecov.com/docs/pull-request-comments
 comment: false

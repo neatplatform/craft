@@ -34,10 +34,22 @@ func main() {
 }
 ```
 
+## CI Checks
+
+CI checks run on `pull_request` and `merge_queue` events, but only when the target branch is `main`.
+
+**Why not on push to main?**
+
+This repo uses merge queue, so all PRs land on `main` through the queue — running checks at that point would be redundant.
+
+**Why not on other branches?**
+
+Branches not targeting `main` skip CI checks entirely to reduce unnecessary runner usage.
+
 
 [godoc-url]: https://pkg.go.dev/github.com/neatplatform/craft
 [godoc-image]: https://pkg.go.dev/badge/github.com/neatplatform/craft
 [workflow-url]: https://github.com/neatplatform/craft/actions/workflows/go.yml
 [workflow-image]: https://github.com/neatplatform/craft/actions/workflows/go.yml/badge.svg
-[codecov-url]: https://codecov.io/github/neatplatform/craft
-[codecov-image]: https://codecov.io/github/neatplatform/craft/badge.svg
+[codecov-url]: https://codecov.io/gh/neatplatform/craft
+[codecov-image]: https://codecov.io/gh/neatplatform/craft/graph/badge.svg
