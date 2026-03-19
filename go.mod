@@ -1,6 +1,6 @@
 module github.com/neatplatform/craft
 
-go 1.20.0
+go 1.21.0
 
 require (
 	github.com/bgentry/speakeasy v0.2.0
