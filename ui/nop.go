@@ -7,7 +7,7 @@ func NewNop() UI {
 	return &nopUI{}
 }
 
-func (u *nopUI) Printf(string, ...interface{}) {}
+func (u *nopUI) Printf(string, ...any) {}
 
 func (u *nopUI) GetLevel() Level {
 	return None
@@ -15,12 +15,12 @@ func (u *nopUI) GetLevel() Level {
 
 func (u *nopUI) SetLevel(Level) {}
 
-func (u *nopUI) Tracef(Style, string, ...interface{}) {}
+func (u *nopUI) Tracef(Style, string, ...any) {}
 
-func (u *nopUI) Debugf(Style, string, ...interface{}) {}
+func (u *nopUI) Debugf(Style, string, ...any) {}
 
-func (u *nopUI) Infof(Style, string, ...interface{}) {}
+func (u *nopUI) Infof(Style, string, ...any) {}
 
-func (u *nopUI) Warnf(Style, string, ...interface{}) {}
+func (u *nopUI) Warnf(Style, string, ...any) {}
 
-func (u *nopUI) Errorf(Style, string, ...interface{}) {}
+func (u *nopUI) Errorf(Style, string, ...any) {}

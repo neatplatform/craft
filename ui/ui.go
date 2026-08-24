@@ -29,16 +29,16 @@ const (
 // UI is the interface for interacting with users in command-line applications.
 type UI interface {
 	// Output method independent of the verbosity level
-	Printf(string, ...interface{})
+	Printf(string, ...any)
 
 	// Leveled output methods
 	GetLevel() Level
 	SetLevel(Level)
-	Tracef(Style, string, ...interface{})
-	Debugf(Style, string, ...interface{})
-	Infof(Style, string, ...interface{})
-	Warnf(Style, string, ...interface{})
-	Errorf(Style, string, ...interface{})
+	Tracef(Style, string, ...any)
+	Debugf(Style, string, ...any)
+	Infof(Style, string, ...any)
+	Warnf(Style, string, ...any)
+	Errorf(Style, string, ...any)
 }
 
 // ui implements the UI interface.
@@ -60,7 +60,7 @@ func New(level Level) UI {
 	}
 }
 
-func (u *ui) Printf(format string, a ...interface{}) {
+func (u *ui) Printf(format string, a ...any) {
 	u.Lock()
 	defer u.Unlock()
 
@@ -82,7 +82,7 @@ func (u *ui) SetLevel(l Level) {
 	u.level = l
 }
 
-func (u *ui) Tracef(style Style, format string, a ...interface{}) {
+func (u *ui) Tracef(style Style, format string, a ...any) {
 	u.Lock()
 	defer u.Unlock()
 
@@ -92,7 +92,7 @@ func (u *ui) Tracef(style Style, format string, a ...interface{}) {
 	}
 }
 
-func (u *ui) Debugf(style Style, format string, a ...interface{}) {
+func (u *ui) Debugf(style Style, format string, a ...any) {
 	u.Lock()
 	defer u.Unlock()
 
@@ -102,7 +102,7 @@ func (u *ui) Debugf(style Style, format string, a ...interface{}) {
 	}
 }
 
-func (u *ui) Infof(style Style, format string, a ...interface{}) {
+func (u *ui) Infof(style Style, format string, a ...any) {
 	u.Lock()
 	defer u.Unlock()
 
@@ -112,7 +112,7 @@ func (u *ui) Infof(style Style, format string, a ...interface{}) {
 	}
 }
 
-func (u *ui) Warnf(style Style, format string, a ...interface{}) {
+func (u *ui) Warnf(style Style, format string, a ...any) {
 	u.Lock()
 	defer u.Unlock()
 
@@ -122,7 +122,7 @@ func (u *ui) Warnf(style Style, format string, a ...interface{}) {
 	}
 }
 
-func (u *ui) Errorf(style Style, format string, a ...interface{}) {
+func (u *ui) Errorf(style Style, format string, a ...any) {
 	u.Lock()
 	defer u.Unlock()
 

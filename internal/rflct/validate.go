@@ -88,7 +88,7 @@ type (
 	}
 )
 
-func IsStructPtr(s interface{}) (reflect.Value, error) {
+func IsStructPtr(s any) (reflect.Value, error) {
 	v := reflect.ValueOf(s) // reflect.Value --> v.Type(), v.Kind(), v.NumField()
 	t := reflect.TypeOf(s)  // reflect.Type --> t.Kind(), t.Name(), t.NumField()
 

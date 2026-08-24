@@ -27,7 +27,7 @@ const (
 	KindSecret Kind = "secret"
 )
 
-func Ask(s interface{}, asker Asker) error {
+func Ask(s any, asker Asker) error {
 	v, err := rflct.IsStructPtr(s)
 	if err != nil {
 		return err
