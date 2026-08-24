@@ -861,7 +861,7 @@ func SetValue(v reflect.Value, sep, val string) (bool, error) {
 	case reflect.Struct:
 		return setStruct(v, val)
 
-	case reflect.Ptr:
+	case reflect.Pointer:
 		tPtr := reflect.TypeOf(v.Interface()).Elem()
 
 		switch tPtr.Kind() {
