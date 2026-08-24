@@ -116,35 +116,35 @@ func TestStyle_sprintf(t *testing.T) {
 		name           string
 		s              Style
 		format         string
-		args           []interface{}
+		args           []any
 		expectedString string
 	}{
 		{
 			name:           "Bold",
 			s:              Style{Bold},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedString: "\x1b[1mHello, World!\x1b[0m",
 		},
 		{
 			name:           "FgGreen",
 			s:              Style{FgGreen},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedString: "\x1b[32mHello, World!\x1b[0m",
 		},
 		{
 			name:           "BgBlue",
 			s:              Style{BgBlue},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedString: "\x1b[44mHello, World!\x1b[0m",
 		},
 		{
 			name:           "MixStyle",
 			s:              Style{BgYellow, FgMagenta, Bold, BlinkSlow},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedString: "\x1b[43;35;1;5mHello, World!\x1b[0m",
 		},
 	}

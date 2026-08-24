@@ -89,7 +89,7 @@ func TestAsk(t *testing.T) {
 
 	tests := []struct {
 		name          string
-		s             interface{}
+		s             any
 		asker         Asker
 		expectedError string
 		expected      *rflct.Flags
@@ -276,7 +276,7 @@ func TestIterateOnFields(t *testing.T) {
 
 	tests := []struct {
 		name                 string
-		s                    interface{}
+		s                    any
 		expectedError        error
 		expectedNames        []string
 		expectedKinds        []Kind

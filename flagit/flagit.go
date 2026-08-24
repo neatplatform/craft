@@ -52,7 +52,7 @@ func (v flagValue) Set(val string) error {
 // For those struct fields that have the flag tag, it will register a flag on the given flag set.
 // The current values of the struct fields will be used as default values for the registered flags.
 // Once the Parse method on the flag set is called, the values will be read, parsed to the appropriate types, and assigned to the corresponding struct fields.
-func Register(fs *flag.FlagSet, s interface{}, continueOnError bool) error {
+func Register(fs *flag.FlagSet, s any, continueOnError bool) error {
 	v, err := rflct.IsStructPtr(s)
 	if err != nil {
 		return err
@@ -111,7 +111,7 @@ func Register(fs *flag.FlagSet, s interface{}, continueOnError bool) error {
 // Parse accepts the pointer to a struct type.
 // For those struct fields that have the flag tag, it will read values from command-line flags and parse them to the appropriate types.
 // This method does not use the built-in flag package for parsing and reading the flags.
-func Parse(s interface{}, continueOnError bool) error {
+func Parse(s any, continueOnError bool) error {
 	v, err := rflct.IsStructPtr(s)
 	if err != nil {
 		return err

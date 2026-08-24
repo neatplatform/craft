@@ -151,7 +151,7 @@ func TestRegister(t *testing.T) {
 		name               string
 		args               []string
 		fs                 *flag.FlagSet
-		s                  interface{}
+		s                  any
 		continueOnError    bool
 		expectedError      error
 		expectedParseError string
@@ -439,7 +439,7 @@ func TestParse(t *testing.T) {
 	tests := []struct {
 		name            string
 		args            []string
-		s               interface{}
+		s               any
 		continueOnError bool
 		expectedError   string
 		expected        *rflct.Flags
@@ -635,7 +635,7 @@ func TestIterateOnFields(t *testing.T) {
 
 	tests := []struct {
 		name               string
-		s                  interface{}
+		s                  any
 		continueOnError    bool
 		expectedError      error
 		expectedFieldNames []string

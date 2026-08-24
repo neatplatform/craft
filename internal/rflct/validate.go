@@ -88,12 +88,12 @@ type (
 	}
 )
 
-func IsStructPtr(s interface{}) (reflect.Value, error) {
+func IsStructPtr(s any) (reflect.Value, error) {
 	v := reflect.ValueOf(s) // reflect.Value --> v.Type(), v.Kind(), v.NumField()
 	t := reflect.TypeOf(s)  // reflect.Type --> t.Kind(), t.Name(), t.NumField()
 
 	// A pointer to a struct should be passed
-	if t.Kind() != reflect.Ptr {
+	if t.Kind() != reflect.Pointer {
 		return reflect.Value{}, errors.New("non-pointer type: you should pass a pointer to a struct type")
 	}
 
@@ -137,7 +137,7 @@ func IsTypeSupported(t reflect.Type) bool {
 		return true
 	case reflect.Float32, reflect.Float64:
 		return true
-	case reflect.Ptr, reflect.Slice:
+	case reflect.Pointer, reflect.Slice:
 		return IsTypeSupported(t.Elem())
 	case reflect.Struct:
 		return IsStructSupported(t)

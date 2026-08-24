@@ -45,13 +45,13 @@ func TestUI_Printf(t *testing.T) {
 	tests := []struct {
 		name           string
 		format         string
-		args           []interface{}
+		args           []any
 		expectedOutput string
 	}{
 		{
 			name:           "OK",
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "Hello, World!\n",
 		},
 	}
@@ -127,21 +127,21 @@ func TestUI_Tracef(t *testing.T) {
 		name           string
 		style          Style
 		format         string
-		args           []interface{}
+		args           []any
 		expectedOutput string
 	}{
 		{
 			name:           "OK_Blue",
 			style:          Blue,
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[34mHello, World!\x1b[0m\n",
 		},
 		{
 			name:           "OK_Mix",
 			style:          Style{BgYellow, FgMagenta, Bold, BlinkSlow},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[43;35;1;5mHello, World!\x1b[0m\n",
 		},
 	}
@@ -167,21 +167,21 @@ func TestUI_Debugf(t *testing.T) {
 		name           string
 		style          Style
 		format         string
-		args           []interface{}
+		args           []any
 		expectedOutput string
 	}{
 		{
 			name:           "OK_Cyan",
 			style:          Cyan,
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[36mHello, World!\x1b[0m\n",
 		},
 		{
 			name:           "OK_Mix",
 			style:          Style{BgYellow, FgMagenta, Bold, BlinkSlow},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[43;35;1;5mHello, World!\x1b[0m\n",
 		},
 	}
@@ -207,21 +207,21 @@ func TestUI_Infof(t *testing.T) {
 		name           string
 		style          Style
 		format         string
-		args           []interface{}
+		args           []any
 		expectedOutput string
 	}{
 		{
 			name:           "OK_Green",
 			style:          Green,
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[32mHello, World!\x1b[0m\n",
 		},
 		{
 			name:           "OK_Mix",
 			style:          Style{BgYellow, FgMagenta, Bold, BlinkSlow},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[43;35;1;5mHello, World!\x1b[0m\n",
 		},
 	}
@@ -247,21 +247,21 @@ func TestUI_Warnf(t *testing.T) {
 		name           string
 		style          Style
 		format         string
-		args           []interface{}
+		args           []any
 		expectedOutput string
 	}{
 		{
 			name:           "OK_Yellow",
 			style:          Yellow,
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[33mHello, World!\x1b[0m\n",
 		},
 		{
 			name:           "OK_Mix",
 			style:          Style{BgYellow, FgMagenta, Bold, BlinkSlow},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[43;35;1;5mHello, World!\x1b[0m\n",
 		},
 	}
@@ -287,21 +287,21 @@ func TestUI_Errorf(t *testing.T) {
 		name           string
 		style          Style
 		format         string
-		args           []interface{}
+		args           []any
 		expectedOutput string
 	}{
 		{
 			name:           "OK_Red",
 			style:          Red,
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[31mHello, World!\x1b[0m\n",
 		},
 		{
 			name:           "OK_Mix",
 			style:          Style{BgYellow, FgMagenta, Bold, BlinkSlow},
 			format:         "Hello, %s!",
-			args:           []interface{}{"World"},
+			args:           []any{"World"},
 			expectedOutput: "\x1b[43;35;1;5mHello, World!\x1b[0m\n",
 		},
 	}

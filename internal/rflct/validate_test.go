@@ -13,7 +13,7 @@ import (
 func TestIsStructPtr(t *testing.T) {
 	tests := []struct {
 		name          string
-		s             interface{}
+		s             any
 		expectedError error
 	}{
 		{
@@ -74,7 +74,7 @@ func TestIsNestedStruct(t *testing.T) {
 func TestIsStructSupported(t *testing.T) {
 	tests := []struct {
 		name     string
-		s        interface{}
+		s        any
 		expected bool
 	}{
 		{"NotSupported", struct{}{}, false},
@@ -96,7 +96,7 @@ func TestIsTypeSupported(t *testing.T) {
 
 	tests := []struct {
 		name              string
-		field             interface{}
+		field             any
 		expectedSupported bool
 	}{
 		{"String", f.Value.String, true},

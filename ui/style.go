@@ -112,7 +112,7 @@ func BgTrueColor(rgb int) Style {
 	return Style{Bg256, ANSICode(2), ANSICode(r), ANSICode(g), ANSICode(b)}
 }
 
-func (s Style) sprintf(format string, a ...interface{}) string {
+func (s Style) sprintf(format string, a ...any) string {
 	const escape = "\x1b"
 
 	codes := make([]string, len(s))
